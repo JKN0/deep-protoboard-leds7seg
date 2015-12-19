@@ -1,0 +1,72 @@
+#******************************************************************
+#
+#  Helsinki Hacklab - Protoboard for digital electronics workshops
+#    
+#  I/O Pin Assignments for CPLD 2  
+#  
+#  XC9572XL-VQ44
+#  
+#******************************************************************
+
+# Clocks
+
+NET "fastclk"    LOC = "P1"  | BUFG = CLK;      # fastCLK (25 MHz oscillator)
+#NET "slowclk"    LOC = "P44" | BUFG = CLK;      # slowCLK (1...100 Hz oscillator)
+
+#------------------------------------------
+# Leds/7-seg multiplexing: : 0 = ioPWR1 (left side), 1 = ioPWR2 (right side)
+
+NET "io_select"  LOC = "P16";
+
+#------------------------------------------
+# 7-segment display
+
+NET "seg<7>"    LOC = "P37";		        # DP
+NET "seg<6>"    LOC = "P29";		        # a
+NET "seg<5>"    LOC = "P30";		        # b
+NET "seg<4>"    LOC = "P31";		        # c
+NET "seg<3>"    LOC = "P32";		        # d
+NET "seg<2>"    LOC = "P33";		        # e
+NET "seg<1>"    LOC = "P34";		        # f
+NET "seg<0>"    LOC = "P36";		        # g
+
+#------------------------------------------
+# Leds
+
+NET "led<7>"   LOC = "P38";			        # signal LED1, labeled '7' MSB (leftmost)
+NET "led<6>"   LOC = "P39";			        # signal LED2, labeled '6'
+NET "led<5>"   LOC = "P40";			        # signal LED3, labeled '5'
+NET "led<4>"   LOC = "P41";			        # signal LED4, labeled '4'
+NET "led<3>"   LOC = "P42";			        # signal LED5, labeled '3'
+NET "led<2>"   LOC = "P43";			        # signal LED6, labeled '2'
+NET "led<1>"   LOC = "P2";			        # signal LED7, labeled '1'
+NET "led<0>"   LOC = "P3";			        # signal LED8, labeled '0' LSB (rightmost)
+
+#------------------------------------------
+# GPIO port, may be input or output depending on GPIO_DIR
+
+#NET "gpio<7>"   LOC = "P5";			        # GPIO 7, MSB (leftmost)
+#NET "gpio<6>"   LOC = "P6";			        # GPIO 6
+#NET "gpio<5>"   LOC = "P7";			        # GPIO 5
+#NET "gpio<4>"   LOC = "P8";			        # GPIO 4
+#NET "gpio<3>"   LOC = "P12";		        # GPIO 3
+#NET "gpio<2>"   LOC = "P13";		        # GPIO 2
+#NET "gpio<1>"   LOC = "P14";		        # GPIO 1
+#NET "gpio<0>"   LOC = "P18";		        # GPIO 0, LSB (rightmost)
+#
+#NET "gpio_dir"  LOC = "P19";		        # GPIO_DIR: 0=in, 1=out
+
+#------------------------------------------
+# RGB-led
+
+NET "led_R"     LOC = "P20";		        # red
+NET "led_G"     LOC = "P21";		        # green
+NET "led_B"     LOC = "P22";		        # blue
+
+#------------------------------------------
+# Encoder
+
+#NET "enc_a"     LOC = "P27";		        # A
+#NET "enc_b"     LOC = "P28";		        # B
+#NET "enc_sw"    LOC = "P23";		        # SW
+
